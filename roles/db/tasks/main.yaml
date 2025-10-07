@@ -1,0 +1,10 @@
+- name: Install MariaDB
+  package:
+    name: mariadb-server
+    state: present
+
+- name: Start MariaDB
+  service:
+    name: mariadb
+    state: started
+    enabled: yes

@@ -1,0 +1,36 @@
+- name: Common setup
+  hosts: all
+  become: true
+  roles:
+    - common
+
+- name: Web server setup
+  hosts: webservers
+  become: true
+  roles:
+    - web
+
+- name: Database setup
+  hosts: dbservers
+  become: true
+  roles:
+    - db
+
+- name: Deploy website
+  hosts: webservers
+  become: true
+  tasks:
+    - name: Upload and extract website
+      ansible.builtin.unarchive:
+        src: files/site.zip
+        dest: /var/www/html
+        owner: www-data
+        group: www-data
+        mode: '0755'
+        copy: yes
+      notify: Restart webserver
+  handlers:
+    - name: Restart webserver
+      service:
+        name: apache2
+        state: restarted

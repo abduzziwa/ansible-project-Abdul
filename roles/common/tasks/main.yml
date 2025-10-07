@@ -1,0 +1,6 @@
+- name: Install basic utilities
+  package:
+    name:
+      - git
+      - curl
+    state: present
