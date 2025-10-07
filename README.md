@@ -57,7 +57,8 @@ Je zit nu in de Ansible VM. Hier zal je de playbooks uitvoeren.
 * Zorg dat de bestanden aanwezig zijn:
 
 ```bash
-ls -l ~/ansible-project
+cd /vagrant
+ls
 ```
 
 * Controleer dat het inventory bestand juist is:
