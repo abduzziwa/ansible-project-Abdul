@@ -59,6 +59,8 @@ Je zit nu in de Ansible VM. Hier zal je de playbooks uitvoeren.
 ```bash
 cd /vagrant
 ls
+sudo apt update
+sudo apt install ansible
 ```
 
 * Controleer dat het inventory bestand juist is:
