@@ -72,7 +72,7 @@ cat inventory.ini
 * Test verbinding met de servers:
 
 ```bash
-ansible all -m ping
+ansible all -i inventory.ini -m ping
 ```
 
 Je zou een output moeten zien met `SUCCESS => {"ping": "pong"}` voor zowel web- als database server.
